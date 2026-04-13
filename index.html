@@ -1,673 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <!-- Font Awesome 6 CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shahd Ahmed — Front-End & Mobile App Developer. Portfolio showcasing web & Ionic projects."/>
+  <title>Shahd Ahmed — Front-End & Mobile Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <title>Document</title>
-  </head>
-  <body style="font-family: cursive">
-    <div class="container-fluid fixed-top">
-      <div class="row navbar align-items-center">
-        <div class="col-8 col-md-4">
-          <h4>Port<span style="color: var(--accent)">folio</span></h4>
-        </div>
-        <div
-          class="col-4 col-md-8 d-flex justify-content-end align-items-center"
-        >
-          <button
-            class="navbar-toggler d-md-none"
-            type="button"
-            aria-label="Toggle navigation"
-            onclick="toggleMobileNav()"
-          >
-            <span
-              class="navbar-toggler-icon"
-              style="
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                position: relative;
-              "
-            >
-              <span
-                style="
-                  background: #fff;
-                  display: block;
-                  height: 4px;
-                  width: 100%;
-                  margin: 6px 0;
-                  border-radius: 2px;
-                "
-              ></span>
-              <span
-                style="
-                  background: #fff;
-                  display: block;
-                  height: 4px;
-                  width: 100%;
-                  margin: 6px 0;
-                  border-radius: 2px;
-                "
-              ></span>
-              <span
-                style="
-                  background: #fff;
-                  display: block;
-                  height: 4px;
-                  width: 100%;
-                  margin: 6px 0;
-                  border-radius: 2px;
-                "
-              ></span>
-            </span>
-          </button>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#project">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <nav class="mobile-nav d-md-none" id="mobileNav">
-        <ul>
-          <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
-          <li><a href="#about" onclick="closeMobileNav()">About</a></li>
-          <li><a href="#skills" onclick="closeMobileNav()">Skills</a></li>
-          <li><a href="#project" onclick="closeMobileNav()">Projects</a></li>
-          <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
-        </ul>
-      </nav>
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="ld-name">Shahd <span>Ahmed</span></div>
+  <div class="ld-bar-wrap"><div class="ld-bar"></div></div>
+  <div class="ld-pct">Loading...</div>
+</div>
+
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Shahd</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#project">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/201098540717" target="_blank" class="nav-cta">Hire Me</a>
+  <button class="ham-btn" id="hamBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-overlay" id="mobOverlay">
+  <a href="#home"     onclick="closeMenu()">Home</a><div class="mob-div"></div>
+  <a href="#about"    onclick="closeMenu()">About</a><div class="mob-div"></div>
+  <a href="#services" onclick="closeMenu()">Services</a><div class="mob-div"></div>
+  <a href="#skills"   onclick="closeMenu()">Skills</a><div class="mob-div"></div>
+  <a href="#project"  onclick="closeMenu()">Projects</a><div class="mob-div"></div>
+  <a href="#contact"  onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section id="home">
+  <div class="hero-mesh"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-vline"></div>
+
+  <!-- col 1: text -->
+  <div class="hero-left">
+    <div class="hero-idx"><i class="fa-solid fa-code"></i> Front-End & Mobile Developer</div>
+    <h1 class="hero-name">Shahd<br><span class="stroke">Ahmed</span></h1>
+    <div class="hero-role">&gt; <span id="typed"></span><span class="cursor-blink"></span></div>
+    <p class="hero-desc">
+      Computer Science student at <strong>Future Academy</strong>, passionate about crafting
+      modern web and mobile experiences. Currently mastering <strong>.NET</strong> for full-stack development.
+    </p>
+    <div class="hero-btns">
+      <a href="image/Shahd_Ahmed_CV_ATS.pdf" target="_blank" class="btn-gold">
+        <i class="fa-solid fa-download"></i><span>Download CV</span>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <i class="fa-solid fa-paper-plane"></i><span>Get In Touch</span>
+      </a>
     </div>
-    <script>
-      function toggleMobileNav() {
-        const nav = document.getElementById("mobileNav");
-        nav.style.display = nav.style.display === "block" ? "none" : "block";
-        document.body.style.overflow =
-          nav.style.display === "block" ? "hidden" : "";
-      }
-      function closeMobileNav() {
-        const nav = document.getElementById("mobileNav");
-        nav.style.display = "none";
-        document.body.style.overflow = "";
-      }
-      // Close mobile nav on resize to md+
-      window.addEventListener("resize", function () {
-        if (window.innerWidth >= 768) {
-          closeMobileNav();
-        }
-      });
-    </script>
+    <div class="hero-counters">
+      <div class="counter-item">
+        <div class="counter-num">20<sup>+</sup></div>
+        <div class="counter-label">Projects Done</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-num">6<sup>+</sup></div>
+        <div class="counter-label">Technologies</div>
+      </div>
+      <div class="counter-item">
+        <div class="counter-num">2<sup>+</sup></div>
+        <div class="counter-label">Years Learning</div>
+      </div>
+    </div>
+  </div>
 
-    <!-- <section class="home">
-    <div class="row">
-    <div class="col card-title">
-       <div class="title">
-      <p>Hello, It's Me</p>
-      <H1>Shahd Ahmed</H1>
-      <h2> And I'm a <span>Web developer</span></h2>
+  <!-- col 2: image — ✅ ALWAYS VISIBLE on all screen sizes -->
+  <div class="hero-right">
+    <div class="img-stage">
+      <img src="image/WhatsApp Image 2026-04-12 at 1.38.45 PM.jpeg" alt="Shahd Ahmed"/>
+      <div class="chip c1"><div class="chip-label">Status</div><div class="chip-value">Open to Work</div></div>
+      <div class="chip c2"><div class="chip-label">Location</div><div class="chip-value">Egypt 🇪🇬</div></div>
+    </div>
+  </div>
 
-          <div class="col">
-            <div class="card video-card" style="width: 18rem; overflow: hidden; border-radius: 20px; box-shadow: 0 8px 32px 0 #232526, 0 0 48px 8px #12b8c2;">
-              <video class="project-video" controls poster="image/Screenshot 2025-09-04 175431.png" style="width:100%; border-radius: 20px 20px 0 0;">
-                <source src="video/your-portfolio-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              <div class="card-body" style="background: linear-gradient(135deg, #232526 0%, #12b8c2 100%); color: #fff;">
-                <h5 class="card-title">Portfolio Demo</h5>
-                <p class="card-text">Watch a creative demo of my portfolio projects and web design skills.</p>
-              </div>
-            </div>
-          </div>
-</section> -->
+  <div class="scroll-ind"><div class="scroll-line"></div>Scroll</div>
+</section>
 
-    <section class="home" id="home">
-      <div class="row align-items-center flex-wrap">
-        <div class="col-12 col-md-6 card-t mb-4 mb-md-0">
-          <div class="title">
-            <p>Hello, It's Me</p>
-            <h1>Shahd Ahmed</h1>
-            <h2>
-              And I'm a <span id="animated-title"></span
-              ><span id="cursor">|</span>
-            </h2>
-            <br />
-            <p>
-              I'm Shahd, a Computer Science student at the Future Academy and<br />
-              I'm passionate about web development.
-            </p>
-            <div class="row">
-              <div class="col-12 col-sm-6 mb-2 mb-sm-0">
-                <button class="btn btn-primary" style="margin-top: 5%">
-                  <a
-                    href="image/Shahd_CV_Final.pdf"
-                    style="
-                      color: #fff;
-                      text-decoration: none;
-                      font-weight: bold;
-                    "
-                    target="_blank"
-                    >DownLoad CV
-                    <i
-                      class="fa-solid fa-download"
-                      style="color: blueviolet"
-                    ></i
-                  ></a>
-                </button>
-              </div>
-              <div class="col-12 col-sm-6">
-                <button class="btn btn-primary" style="margin-top: 5%">
-                  <a
-                    href="https://wa.me/201098540717"
-                    style="
-                      color: #fff;
-                      text-decoration: none;
-                      font-weight: bold;
-                    "
-                    target="_blank"
-                    >Hire Me
-                    <i class="fa-brands fa-whatsapp" style="color: green"></i
-                  ></a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <script>
-            // Typing animation for 'Web developer' and 'Front-end developer'
-            const words = ["Web developer", "Front-end developer"];
-            let i = 0,
-              j = 0,
-              isDeleting = false;
-            const speed = 120;
-            const eraseSpeed = 60;
-            const delay = 1200;
-            const el = document.getElementById("animated-title");
-
-            function typeLoop() {
-              const cursor = document.getElementById("cursor");
-              const word = words[i % words.length];
-              if (!isDeleting) {
-                el.innerHTML = "";
-                let currentText = word.substring(0, j + 1);
-                if (word === "Front-end developer") {
-                  el.innerHTML = `<span style='color:#12b8c2'>${currentText}</span>`;
-                } else {
-                  el.textContent = currentText;
-                }
-                j++;
-                if (j === word.length) {
-                  isDeleting = true;
-                  setTimeout(typeLoop, delay);
-                  return;
-                }
-              } else {
-                el.innerHTML = "";
-                let currentText = word.substring(0, j - 1);
-                if (word === "Front-end developer") {
-                  el.innerHTML = `<span style='color:#12b8c2'>${currentText}</span>`;
-                } else {
-                  el.textContent = currentText;
-                }
-                j--;
-                if (j === 0) {
-                  isDeleting = false;
-                  i++;
-                }
-              }
-              setTimeout(typeLoop, isDeleting ? eraseSpeed : speed);
-            }
-            typeLoop();
-
-            // Blinking cursor effect
-            setInterval(() => {
-              cursor.style.opacity = cursor.style.opacity === "0" ? "1" : "0";
-            }, 500);
-          </script>
-        </div>
-        <div
-          class="col-12 col-md-6 d-flex justify-content-center align-items-center"
-        >
-          <img
-            src="image/Screenshot 2025-02-18 172040.png"
-            alt=""
-            class="imgportfolio"
-          />
+<!-- ══ ABOUT ══ -->
+<section id="about" class="pad-alt">
+  <div data-r>
+    <div class="sec-eyebrow">Who I Am</div>
+    <h2 class="sec-title">About <em>Me</em></h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-img-col" data-r="l">
+      <div class="about-frame">
+        <img src="image/WhatsApp Image 2026-04-12 at 3.34.41 PM.jpeg" alt="Shahd Ahmed"/>
+        <div class="exp-badge">
+          <span class="en">20<sup style="font-size:1rem">+</sup></span>
+          <span class="et">Projects</span>
         </div>
       </div>
-    </section>
-
-    <section class="about" id="about">
-      <h2 class="aboutMe">About Me</h2>
-      <div class="row">
-        <div class="col">
-          <img
-            src="image/Screenshot 2025-02-18 172040.png"
-            alt=""
-            class="imageabout about-frame"
-          />
-        </div>
-        <div class="col" style="margin-top: 5%">
-          <h3>About Me</h3>
-          <p style="line-height: 30px">
-            Hi, I’m Shahd — a Computer Science student and <br />passionate web
-            developer. I’ve built over 20 projects using HTML,<br />
-            CSS, JavaScript, Bootstrap, and Angular, andI’m currently
-            learning<br />
-            .NET to expand my back-end skills. My goal is to become a Full-Stack
-            Developer<br />
-            and create modern, responsive, and user-friendly web applications.
-          </p>
-        </div>
+    </div>
+    <div class="about-text" data-r="r">
+      <h3>Crafting digital<br><span>experiences</span> with code</h3>
+      <p>Hi, I'm Shahd — a CS student at Future Academy with a deep passion for building elegant, functional web & mobile interfaces. I love transforming ideas into polished digital products.</p>
+      <p>I've built 20+ projects using HTML, CSS, JavaScript, Bootstrap, Angular, and Ionic. Currently expanding into back-end with .NET to become a Full-Stack Developer.</p>
+      <div class="facts">
+        <div class="fact"><div class="fact-ico"><i class="fa-solid fa-user"></i></div><span class="fact-k">Name</span><span class="fact-v">Shahd Ahmed</span></div>
+        <div class="fact"><div class="fact-ico"><i class="fa-solid fa-graduation-cap"></i></div><span class="fact-k">Study</span><span class="fact-v">Future Academy — CS</span></div>
+        <div class="fact"><div class="fact-ico"><i class="fa-solid fa-envelope"></i></div><span class="fact-k">Email</span><span class="fact-v">rtshahd84@gmail.com</span></div>
+        <div class="fact"><div class="fact-ico"><i class="fa-solid fa-location-dot"></i></div><span class="fact-k">Based in</span><span class="fact-v">Egypt</span></div>
+        <div class="fact"><div class="fact-ico"><i class="fa-solid fa-circle-check" style="color:var(--teal)"></i></div><span class="fact-k">Status</span><span class="fact-v" style="color:var(--teal)">Available for Work</span></div>
       </div>
-    </section>
-
-    <section class="skills" id="skills">
-      <div class="container">
-        <h2 class="section-title">
-          My <span style="color: var(--accent)">Skills</span>
-        </h2>
-
-        <div class="skills-grid">
-          <!-- left -->
-          <div class="tech">
-            <div class="card-title" style="margin-bottom: 30px">
-              Technical Skills
-            </div>
-
-            <div class="skill-row">
-              <div class="skill-meta">
-                <span class="skill-icon" style="background: #e34f26"></span>
-                <div class="skill-name">HTML</div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-bar">
-                  <div class="skill-fill fill-90"></div>
-                </div>
-              </div>
-              <div class="pct-bubble">90%</div>
-            </div>
-
-            <div class="skill-row">
-              <div class="skill-meta">
-                <span class="skill-icon" style="background: #1572b6"></span>
-                <div class="skill-name">CSS</div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-bar">
-                  <div class="skill-fill fill-75"></div>
-                </div>
-              </div>
-              <div class="pct-bubble">70%</div>
-            </div>
-
-            <div class="skill-row">
-              <div class="skill-meta">
-                <span class="skill-icon" style="background: #f7df1e"></span>
-                <div class="skill-name">Javascript</div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-bar">
-                  <div class="skill-fill fill-65"></div>
-                </div>
-              </div>
-              <div class="pct-bubble">65%</div>
-            </div>
-
-            <div class="skill-row">
-              <div class="skill-meta">
-                <span class="skill-icon" style="background: #4b3cb9"></span>
-                <div class="skill-name">Angular</div>
-              </div>
-              <div class="skill-bar-wrap">
-                <div class="skill-bar">
-                  <div class="skill-fill fill-0"></div>
-                </div>
-              </div>
-              <div class="pct-bubble">50%</div>
-            </div>
-          </div>
-
-          <!-- right -->
-          <div class="pro">
-            <div style="display: grid; place-items: center">
-              <div
-                class="circle"
-                style="
-                  background: conic-gradient(
-                    var(--accent) 0deg,
-                    var(--accent) 270deg,
-                    var(--track) 270deg
-                  );
-                "
-              >
-                <div class="inner">75%</div>
-              </div>
-              <div class="circle-label">Creativity</div>
-            </div>
-
-            <div style="display: grid; place-items: center">
-              <div
-                class="circle"
-                style="
-                  background: conic-gradient(
-                    var(--accent) 0deg,
-                    var(--accent) 324deg,
-                    var(--track) 324deg
-                  );
-                "
-              >
-                <div class="inner">90%</div>
-              </div>
-              <div class="circle-label">Communication</div>
-            </div>
-
-            <div style="display: grid; place-items: center">
-              <div
-                class="circle"
-                style="
-                  background: conic-gradient(
-                    var(--accent) 0deg,
-                    var(--accent) 150deg,
-                    var(--track) 250deg
-                  );
-                "
-              >
-                <div class="inner">65%</div>
-              </div>
-              <div class="circle-label">Problem Solving</div>
-            </div>
-
-            <div style="display: grid; place-items: center">
-              <div
-                class="circle"
-                style="
-                  background: conic-gradient(
-                    var(--accent) 0deg,
-                    var(--accent) 306deg,
-                    var(--track) 306deg
-                  );
-                "
-              >
-                <div class="inner">85%</div>
-              </div>
-              <div class="circle-label">Teamwork</div>
-            </div>
-          </div>
-        </div>
+      <div class="tag-row">
+        <span class="tag"><i class="fa-brands fa-html5" style="margin-right:5px;color:#e34f26"></i>HTML5</span>
+        <span class="tag"><i class="fa-brands fa-css3-alt" style="margin-right:5px;color:#1572b6"></i>CSS3</span>
+        <span class="tag"><i class="fa-brands fa-js" style="margin-right:5px;color:#f7df1e"></i>JavaScript</span>
+        <span class="tag"><i class="fa-brands fa-angular" style="margin-right:5px;color:#dd0031"></i>Angular</span>
+        <span class="tag"><i class="fa-solid fa-mobile-screen-button" style="margin-right:5px;color:#3880ff"></i>Ionic</span>
+        <span class="tag"><i class="fa-brands fa-bootstrap" style="margin-right:5px;color:#7952b3"></i>Bootstrap</span>
+        <span class="tag"><i class="fa-solid fa-database" style="margin-right:5px;color:var(--gold)"></i>.NET</span>
+        <span class="tag"><i class="fa-brands fa-git-alt" style="margin-right:5px;color:#f05032"></i>Git</span>
       </div>
-    </section>
-
-    <section class="projects" id="project">
-      <h2 class="project_title">
-        My <span style="color: var(--accent)">Project</span>
-      </h2>
-
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/Document - Avast Secure Browser 2025-01-21 13-17-01.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/Travela - Avast Secure Browser 2024-12-15 16-02-31.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video
-              width="400"
-              height="240"
-              controls
-              class="wow animate__animated animate__zoomIn animate__slow"
-            >
-              <source
-                src="Videos/Quiz - Avast Secure Browser 2025-02-15 20-09-53.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/Tube - Avast Secure Browser 2025-02-20 22-27-31.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-09 22-44-25.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-25-10.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-28-07.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-28-47.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-29-26.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-30-05.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-31-11.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/‪Document - Google Chrome‬ 2024-10-11 23-32-41.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/App2 - Avast Secure Browser 2025-01-03 21-11-53.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/App2 - Avast Secure Browser 2025-02-02 15-40-49.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="col">
-            <video width="400" height="240" controls>
-              <source
-                src="Videos/App5 - Avast Secure Browser 2025-04-15 22-28-56.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
+      <div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="image/Shahd_Ahmed_CV_ATS.pdf" target="_blank" class="btn-gold">
+          <i class="fa-solid fa-file-arrow-down"></i><span>View Resume</span>
+        </a>
+        <a href="https://wa.me/201098540717" target="_blank" class="btn-ghost">
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2 style="text-align: center">
-          Contact <span style="color: var(--accent)">Me</span>
-        </h2>
-        <div class="row">
-          <div class="col" style="margin-top: 10%">
-            <h3>Let's Connect</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad
-              cumque eaque labore, modi mollitia voluptas nobis quibusdam
-              voluptatibus excepturi.
-            </p>
-            <p>
-              <i class="fa-solid fa-envelope" style="color: var(--accent)"></i>
-              Email:
-              <a
-                href="mailto:rtshahd84@gmail.com"
-                target="_blank"
-                style="color: aqua; text-decoration: none"
-                >rtshahd84@gmail.com</a
-              >
-            </p>
-            <p>
-              <i class="fa-solid fa-phone" style="color: var(--accent)"></i>
-              Phone:
-              <a
-                href="tel:201098540717"
-                target="_blank"
-                style="color: aqua; text-decoration: none"
-                >+201098540717</a
-              >
-            </p>
-          </div>
-          <div class="col" style="margin-top: 8%">
-            <form action="">
-              <input
-                type="text"
-                placeholder="Enter Your Name"
-                class="form-control"
-                required
-                style="background-color: #333"
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Enter Your Name"
-                class="form-control"
-                required
-                style="background-color: #333"
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Enter Your Subject"
-                class="form-control"
-                required
-                style="background-color: #333"
-              />
-              <br />
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Enter Your Message"
-                id=""
-                style="border-radius: 15px; background: #333"
-                class="form-control"
-              ></textarea>
-              <br />
-              <button class="btn btn-primary" style="width: 100%">
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
+<!-- ══ SERVICES ══ -->
+<section id="services" class="pad">
+  <div data-r>
+    <div class="sec-eyebrow">What I Offer</div>
+    <h2 class="sec-title">My <em>Services</em></h2>
+  </div>
+  <div class="services-grid" data-stagger>
+    <div class="svc-card"><div class="svc-num">01</div><div class="svc-icon"><i class="fa-solid fa-desktop"></i></div><h3 class="svc-title">UI Development</h3><p class="svc-desc">Pixel-perfect interfaces using HTML5, CSS3, and JavaScript — responsive, accessible, cross-browser compatible.</p></div>
+    <div class="svc-card"><div class="svc-num">02</div><div class="svc-icon"><i class="fa-brands fa-angular"></i></div><h3 class="svc-title">Angular Apps</h3><p class="svc-desc">Scalable SPAs with Angular, TypeScript, and RxJS built on a solid component-driven architecture.</p></div>
+    <div class="svc-card"><div class="svc-num">03</div><div class="svc-icon"><i class="fa-solid fa-mobile-screen"></i></div><h3 class="svc-title">Ionic Mobile Apps</h3><p class="svc-desc">Cross-platform mobile apps with Ionic + Angular + Capacitor delivering a seamless native-like experience.</p></div>
+    <div class="svc-card"><div class="svc-num">04</div><div class="svc-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h3 class="svc-title">Animations & UX</h3><p class="svc-desc">Smooth CSS animations, scroll-triggered effects, and micro-interactions that delight users.</p></div>
+    <div class="svc-card"><div class="svc-num">05</div><div class="svc-icon"><i class="fa-solid fa-server"></i></div><h3 class="svc-title">.NET Integration</h3><p class="svc-desc">Connecting front-end apps to ASP.NET Core back-ends with RESTful APIs — bridging the full stack.</p></div>
+    <div class="svc-card"><div class="svc-num">06</div><div class="svc-icon"><i class="fa-brands fa-github"></i></div><h3 class="svc-title">Version Control</h3><p class="svc-desc">Clean Git workflows, meaningful commits, and collaborative practices using GitHub for every project.</p></div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills" class="pad-alt">
+  <div data-r>
+    <div class="sec-eyebrow">What I Know</div>
+    <h2 class="sec-title">My <em>Skills</em></h2>
+  </div>
+  <div class="skills-wrap">
+    <div data-r="l">
+      <div class="blk-title"><i class="fa-solid fa-code"></i>Technical Skills</div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#e34f2620;color:#e34f26"><i class="fa-brands fa-html5"></i></div><span class="sk-txt">HTML5</span></div><span class="sk-pct">90%</span></div><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#1572b620;color:#1572b6"><i class="fa-brands fa-css3-alt"></i></div><span class="sk-txt">CSS3</span></div><span class="sk-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#7952b320;color:#7952b3"><i class="fa-brands fa-bootstrap"></i></div><span class="sk-txt">Bootstrap</span></div><span class="sk-pct">80%</span></div><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#f7df1e20;color:#f7df1e"><i class="fa-brands fa-js"></i></div><span class="sk-txt">JavaScript</span></div><span class="sk-pct">65%</span></div><div class="bar-track"><div class="bar-fill" data-w="65"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#dd003120;color:#dd0031"><i class="fa-brands fa-angular"></i></div><span class="sk-txt">Angular</span></div><span class="sk-pct">70%</span></div><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#3880ff20;color:#3880ff"><i class="fa-solid fa-mobile-screen-button"></i></div><span class="sk-txt">Ionic</span></div><span class="sk-pct">75%</span></div><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
+      <div class="sk-row"><div class="sk-top"><div class="sk-name"><div class="sk-ico" style="background:#f0503120;color:#f05031"><i class="fa-brands fa-git-alt"></i></div><span class="sk-txt">Git</span></div><span class="sk-pct">50%</span></div><div class="bar-track"><div class="bar-fill" data-w="50"></div></div></div>
+    </div>
+    <div data-r="r">
+      <div class="blk-title"><i class="fa-solid fa-star"></i>Professional Skills</div>
+      <div class="soft-grid">
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-lightbulb"></i></div><div class="soft-pct">75%</div><div class="soft-lbl">Creativity</div></div>
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-comments"></i></div><div class="soft-pct">90%</div><div class="soft-lbl">Communication</div></div>
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-puzzle-piece"></i></div><div class="soft-pct">65%</div><div class="soft-lbl">Problem Solving</div></div>
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-people-group"></i></div><div class="soft-pct">85%</div><div class="soft-lbl">Teamwork</div></div>
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-book-open"></i></div><div class="soft-pct">95%</div><div class="soft-lbl">Self Learning</div></div>
+        <div class="soft-card"><div class="soft-ico"><i class="fa-solid fa-clock"></i></div><div class="soft-pct">80%</div><div class="soft-lbl">Time Mgmt</div></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+<!-- ══ PROJECTS ══ -->
+<section id="project" class="pad">
+  <div class="proj-intro">
+    <div data-r>
+      <div class="sec-eyebrow">What I've Built</div>
+      <h2 class="sec-title">Featured <em>Projects</em></h2>
+    </div>
+    <div class="proj-filters" data-r>
+      <button class="f-btn on" data-filter="all">All</button>
+      <button class="f-btn" data-filter="html">HTML / CSS</button>
+      <button class="f-btn" data-filter="js">JavaScript</button>
+      <button class="f-btn" data-filter="angular">Angular</button>
+      <button class="f-btn" data-filter="ionic">Ionic</button>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script>
-      new WOW().init();
-    </script>
+  <div class="proj-grid" id="projGrid">
 
-    <link rel="stylesheet" href="js/script.js" />
-  </body>
+    <!-- 01 Weather -->
+    <div class="proj-card" data-r data-cat="js" style="transition-delay:.04s" data-vid="./Videos/Weathers.mp4" data-title="Weather App" data-tags="HTML,CSS,JS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#0d1b2a 0%,#1b4f72 50%,#2e86c1 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <circle cx="200" cy="100" r="45" fill="none" stroke="#e2c46b" stroke-width="1.5"/>
+          <path d="M120 160 Q160 130 200 150 Q240 170 280 145 Q310 125 340 155" fill="none" stroke="#fff" stroke-width="1.2" opacity=".4"/>
+          <path d="M80 180 Q130 155 180 170 Q230 185 280 165" fill="none" stroke="#22d3c8" stroke-width="1" opacity=".35"/>
+          <line x1="200" y1="30" x2="200" y2="10" stroke="#e2c46b" stroke-width="1.2" opacity=".5"/>
+          <line x1="240" y1="45" x2="255" y2="30" stroke="#e2c46b" stroke-width="1.2" opacity=".5"/>
+          <line x1="160" y1="45" x2="145" y2="30" stroke="#e2c46b" stroke-width="1.2" opacity=".5"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">01</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-cloud-sun"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-sun"></i>Weather App</div><div class="proj-title">Weather</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span><span class="proj-chip">JS</span></div></div>
+    </div>
+
+    <!-- 02 Coffee -->
+    <div class="proj-card" data-r data-cat="html" style="transition-delay:.08s" data-vid="./Videos/Coffee.mp4" data-title="Coffee Shop" data-tags="HTML,CSS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#2c1810 0%,#5d3a1a 50%,#8b5e3c 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <ellipse cx="200" cy="170" rx="70" ry="20" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <path d="M155 170 L155 100 Q155 80 175 80 L225 80 Q245 80 245 100 L245 170" fill="none" stroke="#e2c46b" stroke-width="1.5"/>
+          <path d="M245 110 Q275 110 275 130 Q275 150 245 150" fill="none" stroke="#b8973a" stroke-width="1.2"/>
+          <path d="M185 60 Q190 40 185 25" fill="none" stroke="#22d3c8" stroke-width="1" opacity=".5"/>
+          <path d="M200 55 Q205 35 200 20" fill="none" stroke="#22d3c8" stroke-width="1" opacity=".5"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">02</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-mug-hot"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-store"></i>Landing Page</div><div class="proj-title">Coffee Shop</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span></div></div>
+    </div>
+
+    <!-- 03 Travela -->
+    <div class="proj-card" data-r data-cat="html" style="transition-delay:.12s" data-vid="./Videos/Travela.mp4" data-title="Travela" data-tags="Bootstrap,CSS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#093028 0%,#237a57 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" viewBox="0 0 400 252">
+          <circle cx="200" cy="126" r="80" fill="none" stroke="#e2c46b" stroke-width="1"/>
+          <circle cx="200" cy="126" r="55" fill="none" stroke="#e2c46b" stroke-width=".7" stroke-dasharray="4 4"/>
+          <path d="M200 46 L200 206 M120 126 L280 126" stroke="#e2c46b" stroke-width=".7" opacity=".4"/>
+          <path d="M150 70 Q200 30 250 70 Q290 126 250 182 Q200 222 150 182 Q110 126 150 70Z" fill="none" stroke="#22d3c8" stroke-width=".8" opacity=".35"/>
+          <circle cx="200" cy="126" r="8" fill="#e2c46b" opacity=".6"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">03</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-plane-departure"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-earth-africa"></i>Travel</div><div class="proj-title">Travela</div><div class="proj-chips"><span class="proj-chip">Bootstrap</span><span class="proj-chip">CSS</span></div></div>
+    </div>
+
+    <!-- 04 Quiz App -->
+    <div class="proj-card" data-r data-cat="js" style="transition-delay:.16s" data-vid="./Videos/QuizApp.mp4" data-title="Quiz App" data-tags="JavaScript,CSS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <rect x="80" y="36" width="240" height="180" rx="8" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <text x="200" y="100" text-anchor="middle" fill="#e2c46b" font-size="28" font-family="serif" opacity=".6">?</text>
+          <rect x="100" y="120" width="200" height="20" rx="10" fill="none" stroke="#b8973a" stroke-width="1" opacity=".4"/>
+          <rect x="100" y="150" width="200" height="20" rx="10" fill="none" stroke="#b8973a" stroke-width="1" opacity=".4"/>
+          <rect x="100" y="180" width="94" height="20" rx="10" fill="#22d3c8" opacity=".25"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">04</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-circle-question"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-trophy"></i>Quiz Game</div><div class="proj-title">Quiz App</div><div class="proj-chips"><span class="proj-chip">JavaScript</span><span class="proj-chip">CSS</span></div></div>
+    </div>
+
+    <!-- 05 Calculator -->
+    <div class="proj-card" data-r data-cat="js" style="transition-delay:.20s" data-vid="./Videos/Calculator.mp4" data-title="Calculator" data-tags="HTML,CSS,JavaScript">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#0d0d0d 0%,#1a1a1a 50%,#2d2d2d 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <rect x="120" y="20" width="160" height="212" rx="10" fill="none" stroke="#e2c46b" stroke-width="1.5"/>
+          <rect x="132" y="32" width="136" height="40" rx="4" fill="none" stroke="#22d3c8" stroke-width="1"/>
+          <text x="256" y="58" text-anchor="end" fill="#22d3c8" font-size="18" font-family="monospace" opacity=".6">128</text>
+          <rect x="132" y="82" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="168" y="82" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="204" y="82" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="240" y="82" width="28" height="56" rx="3" fill="#22d3c8" opacity=".2"/>
+          <rect x="132" y="112" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="168" y="112" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="204" y="112" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+          <rect x="132" y="145" width="66" height="24" rx="3" fill="#e2c46b" opacity=".25"/>
+          <rect x="204" y="145" width="30" height="24" rx="3" fill="none" stroke="#b8973a" stroke-width="1" opacity=".5"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">05</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-calculator"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-equals"></i>JavaScript App</div><div class="proj-title">Calculator</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">CSS</span><span class="proj-chip">JS</span></div></div>
+    </div>
+
+    <!-- 06 E-commerce (App2 MUST) -->
+    <div class="proj-card" data-r data-cat="angular" style="transition-delay:.24s" data-vid="./Videos/App2 MUST.mp4" data-title="E-commerce Store" data-tags="Angular,TypeScript,CSS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#0a1628 0%,#1a2e4e 50%,#2d4a78 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <path d="M80 60 L100 60 L130 170 L320 170" fill="none" stroke="#e2c46b" stroke-width="1.5"/>
+          <circle cx="160" cy="195" r="16" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <circle cx="290" cy="195" r="16" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <rect x="130" y="80" width="60" height="70" rx="4" fill="none" stroke="#b8973a" stroke-width="1"/>
+          <rect x="200" y="90" width="60" height="60" rx="4" fill="none" stroke="#b8973a" stroke-width="1"/>
+          <rect x="270" y="75" width="50" height="75" rx="4" fill="none" stroke="#b8973a" stroke-width="1"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">06</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-cart-shopping"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-brands fa-angular"></i>E-commerce</div><div class="proj-title">E-commerce Store</div><div class="proj-chips"><span class="proj-chip">Angular</span><span class="proj-chip">TypeScript</span></div></div>
+    </div>
+
+    <!-- 07 App5 E-commerce 2 -->
+    <div class="proj-card" data-r data-cat="angular" style="transition-delay:.28s" data-vid="./Videos/App5.mp4" data-title="E-commerce Store 2" data-tags="Angular,Bootstrap">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#1a0a28 0%,#3d1a5e 50%,#6d3aaa 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" viewBox="0 0 400 252">
+          <rect x="60" y="50" width="120" height="150" rx="6" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <rect x="220" y="50" width="120" height="150" rx="6" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <rect x="75" y="180" width="90" height="12" rx="6" fill="#e2c46b" opacity=".3"/>
+          <rect x="235" y="180" width="90" height="12" rx="6" fill="#22d3c8" opacity=".3"/>
+          <path d="M70 215 Q200 200 330 215" fill="none" stroke="#b8973a" stroke-width="1" opacity=".4"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">07</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-bag-shopping"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-brands fa-angular"></i>E-commerce</div><div class="proj-title">E-commerce Store 2</div><div class="proj-chips"><span class="proj-chip">Angular</span><span class="proj-chip">Bootstrap</span></div></div>
+    </div>
+
+    <!-- 08 Recipes -->
+    <div class="proj-card" data-r data-cat="js" style="transition-delay:.32s" data-vid="./Videos/Recipes.mp4" data-title="Recipes App" data-tags="HTML,JavaScript">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#1a2e0a 0%,#3d6b1a 50%,#5a9e2f 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <circle cx="130" cy="126" r="55" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <path d="M110 126 Q130 90 150 126 Q170 162 190 126" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <circle cx="270" cy="90" r="35" fill="none" stroke="#b8973a" stroke-width="1"/>
+          <circle cx="290" cy="160" r="28" fill="none" stroke="#e2c46b" stroke-width="1"/>
+          <line x1="250" y1="126" x2="310" y2="126" stroke="#22d3c8" stroke-width=".8" opacity=".4"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">08</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-utensils"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-bowl-food"></i>Food App</div><div class="proj-title">Recipes App</div><div class="proj-chips"><span class="proj-chip">HTML</span><span class="proj-chip">JavaScript</span></div></div>
+    </div>
+
+    <!-- 09 TODO -->
+    <div class="proj-card" data-r data-cat="angular" style="transition-delay:.36s" data-vid="./Videos/TODO.mp4" data-title="TODO App" data-tags="Angular,TypeScript">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#1a0000 0%,#3d0000 50%,#dd0031 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" viewBox="0 0 400 252">
+          <rect x="100" y="40" width="200" height="172" rx="6" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <line x1="115" y1="80" x2="285" y2="80" stroke="#b8973a" stroke-width=".8" opacity=".4"/>
+          <line x1="115" y1="110" x2="285" y2="110" stroke="#b8973a" stroke-width=".8" opacity=".4"/>
+          <line x1="115" y1="140" x2="285" y2="140" stroke="#b8973a" stroke-width=".8" opacity=".4"/>
+          <circle cx="125" cy="65" r="7" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <circle cx="125" cy="95" r="7" fill="#22d3c8" opacity=".4"/>
+          <circle cx="125" cy="125" r="7" fill="none" stroke="#22d3c8" stroke-width="1.2"/>
+          <rect x="140" y="58" width="100" height="14" rx="3" fill="#e2c46b" opacity=".25"/>
+          <rect x="140" y="88" width="80" height="14" rx="3" fill="#22d3c8" opacity=".2"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">09</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-list-check"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-brands fa-angular"></i>Task Manager</div><div class="proj-title">TODO App</div><div class="proj-chips"><span class="proj-chip">Angular</span><span class="proj-chip">TypeScript</span></div></div>
+    </div>
+
+    <!-- 10 Dashboard -->
+    <div class="proj-card" data-r data-cat="angular" style="transition-delay:.40s" data-vid="./Videos/Dashboard.mp4" data-title="Angular Dashboard" data-tags="Angular,Bootstrap,RxJS">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#0a0a1a 0%,#1a1a4e 50%,#2d2d8f 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.35" viewBox="0 0 400 252">
+          <rect x="60" y="40" width="80" height="60" rx="4" fill="none" stroke="#22d3c8" stroke-width="1"/>
+          <rect x="155" y="40" width="80" height="60" rx="4" fill="none" stroke="#b8973a" stroke-width="1"/>
+          <rect x="250" y="40" width="90" height="60" rx="4" fill="none" stroke="#22d3c8" stroke-width="1"/>
+          <rect x="60" y="115" width="280" height="90" rx="4" fill="none" stroke="#e2c46b" stroke-width=".8"/>
+          <polyline points="70,185 110,155 150,170 200,130 250,145 310,110" fill="none" stroke="#22d3c8" stroke-width="1.5"/>
+          <circle cx="200" cy="130" r="3" fill="#22d3c8"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">10</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-gauge-high"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-chart-line"></i>Dashboard</div><div class="proj-title">Angular Dashboard</div><div class="proj-chips"><span class="proj-chip">Angular</span><span class="proj-chip">Bootstrap</span><span class="proj-chip">RxJS</span></div></div>
+    </div>
+
+    <!-- 11 Empath AI -->
+    <div class="proj-card" data-r data-cat="ionic" style="transition-delay:.44s" data-vid="./Videos/Empath-Ai.mp4" data-title="Empath AI" data-tags="Ionic,Angular,AI">
+      <div class="proj-thumb"><div class="thumb-bg"><div class="thumb-art" style="background:linear-gradient(135deg,#003333 0%,#006666 50%,#00b8b8 100%)"></div>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.3" viewBox="0 0 400 252">
+          <rect x="150" y="20" width="100" height="210" rx="14" fill="none" stroke="#e2c46b" stroke-width="1.5"/>
+          <rect x="163" y="36" width="74" height="128" rx="4" fill="none" stroke="#22d3c8" stroke-width="1"/>
+          <path d="M170 90 Q190 70 200 90 Q210 110 230 90" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <path d="M166 110 Q186 88 200 110 Q214 132 234 110" fill="none" stroke="#22d3c8" stroke-width="1"/>
+          <circle cx="200" cy="170" r="12" fill="none" stroke="#e2c46b" stroke-width="1.2"/>
+          <line x1="200" y1="155" x2="200" y2="148" stroke="#e2c46b" stroke-width="1"/>
+        </svg>
+      </div><div class="thumb-shine"></div><div class="proj-overlay"></div>
+      <div class="proj-n">11</div><div class="thumb-ico"><div class="thumb-ico-inner"><i class="fa-solid fa-brain"></i></div></div>
+      <div class="play-badge"><i class="fa-solid fa-play"></i> Watch Demo</div></div>
+      <div class="proj-meta"><div class="proj-cat"><i class="fa-solid fa-mobile-screen-button"></i>AI App</div><div class="proj-title">Empath AI</div><div class="proj-chips"><span class="proj-chip">Ionic</span><span class="proj-chip">Angular</span><span class="proj-chip">AI</span></div></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ LIGHTBOX ══ -->
+<div id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <video id="lb-video" controls playsinline></video>
+    <div class="lb-meta">
+      <div class="lb-title" id="lb-title"></div>
+      <div class="lb-tags" id="lb-tags"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="pad-alt">
+  <div data-r>
+    <div class="sec-eyebrow">Let's Talk</div>
+    <h2 class="sec-title">Get In <em>Touch</em></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-left" data-r="l">
+      <h3>Let's build something<br><em>great together</em></h3>
+      <p>I'm open to freelance opportunities, internships, and collaborations. Whether you have a project in mind or just want to say hello — my inbox is always open.</p>
+      <div class="c-links">
+        <a href="mailto:rtshahd84@gmail.com" class="c-link">
+          <div class="cl-ico"><i class="fa-solid fa-envelope"></i></div>
+          <div><div class="cl-lbl">Email Address</div><div class="cl-val">rtshahd84@gmail.com</div></div>
+        </a>
+        <a href="https://wa.me/201098540717" target="_blank" class="c-link">
+          <div class="cl-ico"><i class="fa-brands fa-whatsapp"></i></div>
+          <div><div class="cl-lbl">WhatsApp / Phone</div><div class="cl-val">+20 109 854 0717</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/shahd-ahmed-367552340" target="_blank" class="c-link">
+          <div class="cl-ico"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div><div class="cl-lbl">LinkedIn</div><div class="cl-val">linkedin.com/in/shahd-ahmed-367552340</div></div>
+        </a>
+        <a href="https://github.com/shahd237" target="_blank" class="c-link">
+          <div class="cl-ico"><i class="fa-brands fa-github"></i></div>
+          <div><div class="cl-lbl">GitHub</div><div class="cl-val">github.com/shahd237</div></div>
+        </a>
+      </div>
+    </div>
+    <div data-r="r">
+      <form class="c-form" id="contactForm" onsubmit="sendToWhatsApp(event)">
+        <div class="f-row">
+          <div class="field"><label for="f-name">Your Name</label><input id="f-name" type="text" placeholder="Your full name" required/></div>
+          <div class="field"><label for="f-email">Email Address</label><input id="f-email" type="email" placeholder="hello@email.com" required/></div>
+        </div>
+        <div class="field"><label for="f-subject">Subject</label><input id="f-subject" type="text" placeholder="Project Inquiry / Collaboration" required/></div>
+        <div class="field"><label for="f-message">Your Message</label><textarea id="f-message" rows="5" placeholder="Tell me about your project..."></textarea></div>
+        <button type="submit" class="btn-submit">
+          <i class="fa-brands fa-whatsapp"></i><span>Send via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <a href="#home" class="nav-logo" style="text-decoration:none;font-size:1.75rem">Shahd</a>
+      <p style="font-family:var(--ff-m);font-size:.6rem;letter-spacing:2px;color:var(--grey);margin-top:5px">Front-End & Mobile Developer — Egypt</p>
+    </div>
+    <div class="ft-socials">
+      <a href="https://wa.me/201098540717" target="_blank" class="soc" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="mailto:rtshahd84@gmail.com" class="soc" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/shahd-ahmed-367552340" target="_blank" class="soc" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://github.com/shahd237" target="_blank" class="soc" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.behance.net/shahdahmed" target="_blank" class="soc" title="Behance"><i class="fa-brands fa-behance"></i></a>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-copy">© 2025 <span style="color:var(--gold)">Shahd Ahmed</span> · All rights reserved</p>
+    <ul class="ft-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+/* ── Loader ── */
+window.addEventListener('load', () =>
+  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 2200)
+);
+
+/* ── Custom cursor ── */
+const dot=document.getElementById('c-dot'),ring=document.getElementById('c-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function loop(){
+  rx+=(mx-rx)*.1;ry+=(my-ry)*.1;
+  dot.style.transform=`translate(${mx-3.5}px,${my-3.5}px)`;
+  ring.style.transform=`translate(${rx-19}px,${ry-19}px)`;
+  requestAnimationFrame(loop);
+})();
+
+/* ── Navbar scroll + active link ── */
+const navbar=document.getElementById('navbar');
+const navAs=document.querySelectorAll('.nav-links a');
+const secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>60);
+  let cur='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});
+  navAs.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* ── Hamburger ── */
+const hamBtn=document.getElementById('hamBtn');
+const mobOv=document.getElementById('mobOverlay');
+hamBtn.addEventListener('click',()=>{
+  hamBtn.classList.toggle('open');
+  mobOv.classList.toggle('open');
+  document.body.style.overflow=mobOv.classList.contains('open')?'hidden':'';
+});
+function closeMenu(){
+  hamBtn.classList.remove('open');mobOv.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── Typing animation ── */
+const words=['Web Developer','Front-End Developer','Mobile App Developer (Ionic)','CS Student'];
+let wi=0,ci=0,del=false;
+const typedEl=document.getElementById('typed');
+(function type(){
+  const w=words[wi%words.length];
+  if(!del){typedEl.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,1600);return;}}
+  else{typedEl.textContent=w.slice(0,--ci);if(ci===0){del=false;wi++;}}
+  setTimeout(type,del?45:100);
+})();
+
+/* ── Scroll Reveal ── */
+const rObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rObs.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('[data-r],[data-stagger]').forEach(el=>rObs.observe(el));
+
+/* ── Skill bars ── */
+const bObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');
+      bObs.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll('#skills').forEach(el=>bObs.observe(el));
+
+/* ── 3D tilt (desktop only) ── */
+if(window.matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.proj-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(600px) rotateY(${x*10}deg) rotateX(${-y*8}deg) translateZ(4px)`;
+    });
+    card.addEventListener('mouseleave',()=>card.style.transform='');
+  });
+}
+
+/* ── Project filter ── */
+document.querySelectorAll('.f-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.proj-card').forEach(card=>{
+      const show=f==='all'||card.dataset.cat===f;
+      card.style.transition='opacity .35s,transform .35s,border-color .35s,box-shadow .35s';
+      card.style.opacity=show?'1':'0.12';
+      card.style.transform=show?'':'scale(.95)';
+      card.style.pointerEvents=show?'':'none';
+    });
+  });
+});
+
+/* ── Lightbox ── */
+const lb=document.getElementById('lightbox');
+const lbVideo=document.getElementById('lb-video');
+const lbTitle=document.getElementById('lb-title');
+const lbTags=document.getElementById('lb-tags');
+const lbClose=document.getElementById('lbClose');
+document.querySelectorAll('.proj-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const vid=card.dataset.vid,title=card.dataset.title;
+    const tags=(card.dataset.tags||'').split(',').filter(Boolean);
+    if(!vid)return;
+    lbVideo.src=vid;
+    lbTitle.textContent=title;
+    lbTags.innerHTML=tags.map(t=>`<span class="lb-tag">${t}</span>`).join('');
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+    lbVideo.play().catch(()=>{});
+  });
+});
+function closeLb(){
+  lb.classList.remove('open');lbVideo.pause();lbVideo.src='';
+  document.body.style.overflow='';
+}
+lbClose.addEventListener('click',closeLb);
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+
+/* ── WhatsApp contact form ── */
+function sendToWhatsApp(e){
+  e.preventDefault();
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const subject=document.getElementById('f-subject').value.trim();
+  const message=document.getElementById('f-message').value.trim();
+  if(!name||!subject)return;
+  const text=
+`Hello Shahd 👋
+
+Subject: ${subject}
+Name: ${name}
+Email: ${email||'Not provided'}
+
+Message:
+${message||'(no message)'}
+
+──────────────────
+Sent from your portfolio`;
+  window.open(`https://wa.me/201098540717?text=${encodeURIComponent(text)}`,'_blank');
+  const span=document.querySelector('#contactForm .btn-submit span');
+  const orig=span.textContent;
+  span.textContent='Opening WhatsApp ✓';
+  setTimeout(()=>{span.textContent=orig;document.getElementById('contactForm').reset();},2000);
+}
+</script>
+</body>
 </html>
